@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen as uReq
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = 'bdhcbdjhbsjhvsjvjvsjdhfv121319414!!%#$#$%@gueqfdtdf15646'
 
 @app.route('/', methods=['GET'])  # route to display the home page
 # @cross_origin()
@@ -82,8 +82,8 @@ def index():
     else:
         return render_template('index.html')
 
-port = int(os.getenv("PORT"))
+# port = int(os.getenv("PORT"))
 if __name__ == "__main__":
     #app.run(host='0.0.0.0', port=5000)
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=False)
     # app.run(host='127.0.0.1', port=8001, debug=True)
